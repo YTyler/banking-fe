@@ -1,6 +1,5 @@
 import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import HomePage from "./screens/HomePage";
 import NoMatch from "./screens/NoMatch";
 import LoginPage from './screens/LoginPage';
 
@@ -9,7 +8,7 @@ function App() {
     <div className="App">
       <BrowserRouter basename="/">
         <Routes>
-          <Route path="/" >
+          <Route path="/">
             <Route index element={<LoginPage/>}/>
           </Route>
           <Route path="*" element={<NoMatch/>}/>
