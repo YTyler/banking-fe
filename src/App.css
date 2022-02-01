@@ -22,6 +22,10 @@ body {
 .customerLogin input {
   margin-bottom: .5em;
 }
+.customerLogin input:focus {
+  outline: none;
+  background-color: rgb(221, 221, 221);
+}
 
 .submit {
   width: fit-content;
