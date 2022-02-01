@@ -2,6 +2,7 @@ import './App.css';
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import HomePage from "./screens/HomePage";
 import NoMatch from "./screens/NoMatch";
+import LoginPage from './screens/LoginPage';
 
 function App() {
   return (
@@ -9,7 +10,7 @@ function App() {
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/" >
-            <Route index element={<HomePage logging = {log} userObject = {userObj}/>}/>
+            <Route index element={<LoginPage/>}/>
           </Route>
           <Route path="*" element={<NoMatch/>}/>
         </Routes>
