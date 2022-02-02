@@ -15,8 +15,8 @@ export default function UsersPage() {
   return (
     <div>
       {users.map((u) => (
-        <div key={u.id}>
-          <h1>{u.name}</h1>
+        <div key={u.user_id}>
+          <h1>{u.username}</h1>
         </div>
       ))}
     </div>
