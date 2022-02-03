@@ -29,8 +29,8 @@ export default function ManagerPage() {
 
   const handlePanChange = (el) => {
     setPan(el.target.value);
-    setSubmitted(false)
-  }
+    setSubmitted(false);
+  };
   return (
     <div>
       <h1>Manager Access</h1>

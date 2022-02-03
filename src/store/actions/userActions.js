@@ -1,9 +1,9 @@
 import { GET_USERS, LOGIN_USER, USERS_ERROR } from "../types";
-import axios from "../../axios/axiosConfig"
+import axios from "../../axios/axiosConfig";
 
 export const getUsers = () => async (dispatch) => {
   try {
-    const res = await axios.get('/users');
+    const res = await axios.get("/users");
     dispatch({
       type: GET_USERS,
       payload: res.data,
@@ -18,7 +18,7 @@ export const getUsers = () => async (dispatch) => {
 
 export const loginUser = (username, password) => async (dispatch) => {
   try {
-    const res = await axios.post(`/users/login`, {username, password});
+    const res = await axios.post(`/users/login`, { username, password });
     dispatch({
       type: LOGIN_USER,
       payload: res.data,

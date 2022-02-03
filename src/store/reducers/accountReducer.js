@@ -11,7 +11,7 @@ function accountReducer(state = initialState, action) {
     case GET_ACCOUNT:
       return {
         ...state,
-				account: action.payload,
+        account: action.payload,
         loading: false,
       };
     default:
