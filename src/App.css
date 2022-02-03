@@ -1,7 +1,7 @@
 * {
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 body {
@@ -20,7 +20,7 @@ body {
 }
 
 .customerLogin input {
-  margin-bottom: .5em;
+  margin-bottom: 0.5em;
 }
 .customerLogin input:focus {
   outline: none;
@@ -30,5 +30,5 @@ body {
 .submit {
   width: fit-content;
   margin: auto;
-  padding: .25em;
+  padding: 0.25em;
 }
