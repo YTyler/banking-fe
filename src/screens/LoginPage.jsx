@@ -39,7 +39,7 @@ export default function LoginPage() {
   return (
     <div>
       <Navbar />
-      <form className="customerLogin" onSubmit={(e) => loginHandler(e)}>
+      <form className="card customerLogin" onSubmit={(e) => loginHandler(e)}>
         <label>Username:</label>
         <input
           type="text"

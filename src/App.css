@@ -8,14 +8,17 @@ body {
   background-color: rgb(92, 91, 86);
 }
 
-.customerLogin {
+.card {
   display: flex;
   flex-direction: column;
-  margin: 25vh auto;
-  width: 20%;
   padding: 2em;
   background-color: rgba(179, 177, 171, 0.5);
   border-radius: 20px;
+}
+
+.customerLogin {
+  margin: 25vh auto;
+  width: 20%;
   font-size: 1.5rem;
 }
 
