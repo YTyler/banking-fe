@@ -14,15 +14,14 @@ export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
-	useEffect(() => {
-		if (user.role === "account_holder") {
+  useEffect(() => {
+    if (user.role === "account_holder") {
       navigate("/customer");
     } else if (user.role === "bank_manager") {
       navigate("/manager");
     }
-		
-	}, [navigate, user]);
-	
+  }, [navigate, user]);
+
   const loginHandler = (event) => {
     event.preventDefault();
     dispatch(loginUser(username, password));
@@ -30,16 +29,15 @@ export default function LoginPage() {
       setLoginIsValid(true);
     } else {
       setLoginIsValid(false);
-			setUsername("");
-    	setPassword("");
+      setUsername("");
+      setPassword("");
     }
-    
   };
 
   return (
     <div>
       <Navbar />
-      <form className="card customerLogin" onSubmit={(e) => loginHandler(e)}>
+      <form className="card centeredForm" onSubmit={(e) => loginHandler(e)}>
         <label>Username:</label>
         <input
           type="text"
@@ -47,13 +45,13 @@ export default function LoginPage() {
           onChange={(el) => {
             setUsername(el.target.value);
           }}
-        ></input>
+        />
         <label>Password:</label>
         <input
           type="password"
           value={password}
           onChange={(el) => setPassword(el.target.value)}
-        ></input>
+        />
         <input className="submit" type="submit"></input>
         {!loginIsValid && <p>Login Credentials are Invalid</p>}
       </form>
