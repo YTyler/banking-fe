@@ -1,8 +1,9 @@
-import './App.css';
+import "./App.css";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import NoMatch from "./screens/NoMatch";
-import LoginPage from './screens/LoginPage';
-import TestPage from './screens/TestPage';
+import LoginPage from "./screens/LoginPage";
+import ManagerPage from "./screens/ManagerPage";
+import TestPage from "./screens/TestPage";
 
 function App() {
   return (
@@ -10,10 +11,11 @@ function App() {
       <BrowserRouter basename="/">
         <Routes>
           <Route path="/">
-            <Route index element={<LoginPage/>}/>
-            <Route path="test" element={<TestPage/>}/>
+            <Route index element={<LoginPage />} />
+            <Route path="manager" element={<ManagerPage />} />
+            <Route path="test" element={<TestPage />} />
           </Route>
-          <Route path="*" element={<NoMatch/>}/>
+          <Route path="*" element={<NoMatch />} />
         </Routes>
       </BrowserRouter>
     </div>
