@@ -14,25 +14,37 @@ body {
 }
 
 .card {
-  display: flex;
-  flex-direction: column;
   padding: 2em;
   background-color: rgba(179, 177, 171, 0.5);
   border-radius: 20px;
 }
+.card + .card {
+  margin-top: 1em;
+}
 
-.centeredForm {
-  margin: 25vh auto;
-  width: 20%;
+.centered {
+  margin: 20vh auto;
+  width: 40%;
   font-size: 1.5rem;
 }
 
-.centeredForm input {
+.centered label {
+  text-align: left;
+  margin-bottom: 0.25em;
+}
+
+.centered input {
   margin-bottom: 0.5em;
 }
-.centeredForm input:focus {
+
+.centered input:focus {
   outline: none;
   background-color: rgb(221, 221, 221);
+}
+
+.flexColumn {
+  display: flex;
+  flex-direction: column;
 }
 
 .submit {

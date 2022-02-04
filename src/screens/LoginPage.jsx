@@ -35,9 +35,8 @@ export default function LoginPage() {
   };
 
   return (
-    <div>
-      <Navbar />
-      <form className="card centeredForm" onSubmit={(e) => loginHandler(e)}>
+    <div className="centered">
+      <form className="card flexColumn" onSubmit={(e) => loginHandler(e)}>
         <label>Username:</label>
         <input
           type="text"
