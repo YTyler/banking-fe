@@ -21,6 +21,7 @@ export default function NewUser() {
           name="username"
           type="text"
           required
+          autoFocus
           value={username}
           onChange={(ev) => setUsername(ev.target.value)}
         />

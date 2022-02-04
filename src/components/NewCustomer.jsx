@@ -39,6 +39,7 @@ export default function NewCustomer() {
           name="name"
           type="text"
           required
+          autoFocus
           value={newCustomer.name}
           onChange={(ev) => changeHandler(ev.target)}
         />
