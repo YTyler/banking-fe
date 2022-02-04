@@ -1,34 +1,58 @@
 * {
-    font-size: 100%;
-    margin: 0;
-    padding: 0;
+  font-size: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+h1 {
+  font-size: 5rem;
+  margin-bottom: 0.5em;
+  text-align: center;
 }
 
 body {
   background-color: rgb(92, 91, 86);
 }
 
-.customerLogin {
-  display: flex;
-  flex-direction: column;
-  margin: 25vh auto;
-  width: 20%;
+.card {
   padding: 2em;
   background-color: rgba(179, 177, 171, 0.5);
   border-radius: 20px;
+  margin-top: 1em;
+}
+
+.centered {
+  margin: auto;
+  width: 40%;
   font-size: 1.5rem;
 }
 
-.customerLogin input {
-  margin-bottom: .5em;
+.centered label {
+  margin-bottom: 0.25em;
 }
-.customerLogin input:focus {
+
+.centered input:focus {
   outline: none;
   background-color: rgb(221, 221, 221);
 }
 
+.flexColumn {
+  display: flex;
+  flex-direction: column;
+}
+
 .submit {
   width: fit-content;
-  margin: auto;
-  padding: .25em;
+  margin: 0.5em auto;
+  padding: 0.25em;
+}
+
+.info {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.option {
+  text-align: center;
+  margin-top: 0.5em;
 }
