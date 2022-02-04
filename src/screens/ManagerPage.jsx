@@ -5,10 +5,10 @@ import { Outlet, useNavigate } from "react-router-dom";
 import { getCustomerByPan } from "../store/actions/customerActions";
 
 export default function ManagerPage() {
-  const customer = useSelector((state) => state.customerState.customer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  const customer = useSelector((state) => state.customerState.customer);
   const [pan, setPan] = useState("");
   const [customerExists, setCustomerExists] = useState(false);
   const [submitted, setSubmitted] = useState(false);
@@ -32,7 +32,7 @@ export default function ManagerPage() {
   const handlePanChange = (el) => {
     setPan(el.target.value);
     setSubmitted(false);
-    if (window.location != "/manager" || "/manager/") {
+    if (window.location !== "/manager" || "/manager/") {
       navigate("/manager");
     }
   };

@@ -5,13 +5,13 @@ import { useNavigate } from "react-router-dom";
 import { loginUser } from "../store/actions/userActions";
 
 export default function LoginPage() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const user = useSelector((state) => state.userState.currentUser);
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [loginIsValid, setLoginIsValid] = useState(true);
-
-  const user = useSelector((state) => state.userState.currentUser);
-  const dispatch = useDispatch();
-  const navigate = useNavigate();
 
   //navigate to correct page based on user role
   useEffect(() => {

@@ -29,8 +29,6 @@ export default function NewCustomer() {
     dispatch(createCustomer(newCustomer, createdUser));
     navigate("/manager/success/customer");
   };
-
-  console.log(createdUser);
   return (
     <section>
       <form className="card flexColumn" onSubmit={(ev) => submitHandler(ev)}>
