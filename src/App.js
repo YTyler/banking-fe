@@ -4,7 +4,7 @@ import NoMatch from "./screens/NoMatch";
 import LoginPage from "./screens/LoginPage";
 import ManagerPage from "./screens/ManagerPage";
 import TestPage from "./screens/TestPage";
-
+import NewCustomer from "./components/NewCustomer";
 function App() {
   return (
     <div className="App">
@@ -12,7 +12,9 @@ function App() {
         <Routes>
           <Route path="/">
             <Route index element={<LoginPage />} />
-            <Route path="manager" element={<ManagerPage />} />
+            <Route path="manager" element={<ManagerPage />}>
+              <Route path="newcustomer" element={<NewCustomer />} />
+            </Route>
             <Route path="test" element={<TestPage />} />
           </Route>
           <Route path="*" element={<NoMatch />} />

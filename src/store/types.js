@@ -1,7 +1,8 @@
 //User Actions
 export const GET_USERS = "GET_USERS";
-export const USERS_ERROR = "USERS_ERROR";
 export const LOGIN_USER = "LOGIN_USER";
+export const CREATE_HOLDER = "CREATE_HOLDER";
+export const USERS_ERROR = "USERS_ERROR";
 
 //Customer Actions
 export const GET_CUSTOMER = "GET_CUSTOMER";
