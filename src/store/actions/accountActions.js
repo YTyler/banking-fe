@@ -1,4 +1,4 @@
-import { GET_ACCOUNT, ACCOUNT_ERROR } from "../types";
+import { GET_ACCOUNT } from "../types";
 import axios from "../../axios/axiosConfig";
 
 export const getAccount = (account_number) => async (dispatch) => {

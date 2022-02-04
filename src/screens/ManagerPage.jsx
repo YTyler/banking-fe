@@ -1,32 +1,33 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
-import { getAccount } from "../store/actions/accountActions";
+import { Outlet, useNavigate } from "react-router-dom";
+import { getCustomerByPan } from "../store/actions/customerActions";
 
 export default function ManagerPage() {
-  const account = useSelector((state) => state.accountState.account);
+  const customer = useSelector((state) => state.customerState.customer);
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
   const [pan, setPan] = useState("");
-  const [accountExists, setAccountExists] = useState(true);
+  const [customerExists, setCustomerExists] = useState(false);
   const [submitted, setSubmitted] = useState(false);
 
   useEffect(() => {
-    if (!account.account_number) {
-      setAccountExists(false);
+    if (!customer.pan) {
+      setCustomerExists(false);
     } else {
-      setAccountExists(true);
+      setCustomerExists(true);
     }
-  }, [account]);
+  }, [customer]);
 
-  const searchAccount = (event) => {
+  const searchCustomer = (event) => {
     event.preventDefault();
     if (pan) {
-      dispatch(getAccount(pan));
+      dispatch(getCustomerByPan(pan));
     }
     setSubmitted(true);
+    console.log(customer);
   };
 
   const handlePanChange = (el) => {
@@ -34,10 +35,10 @@ export default function ManagerPage() {
     setSubmitted(false);
   };
   return (
-    <div>
+    <>
       <h1>Manager Access</h1>
-      <div className="centered">
-        <form className="card flexColumn" onSubmit={(e) => searchAccount(e)}>
+      <section className="centered">
+        <form className="card flexColumn" onSubmit={(e) => searchCustomer(e)}>
           <label>Enter Permanent Account Number:</label>
           <input
             type="number"
@@ -51,10 +52,10 @@ export default function ManagerPage() {
           />
           <input className="submit" type="submit" value="Check for Account" />
           {submitted &&
-            (!accountExists ? (
-              <p>That account does not yet exist</p>
+            (!customerExists ? (
+              <p>That customer does not yet exist</p>
             ) : (
-              <p>An account with that PAN exists</p>
+              <p>A customer with that PAN exists</p>
             ))}
         </form>
         <div className="card flexColumn">
@@ -69,7 +70,8 @@ export default function ManagerPage() {
             onClick={() => navigate("/manager/newAccount")}
           />
         </div>
-      </div>
-    </div>
+        <Outlet />
+      </section>
+    </>
   );
 }
