@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Outlet, useNavigate } from "react-router-dom";
+import { Outlet, useNavigate, useLo } from "react-router-dom";
 import { getCustomerByPan } from "../store/actions/customerActions";
 
 export default function ManagerPage() {
@@ -21,18 +21,20 @@ export default function ManagerPage() {
     }
   }, [customer]);
 
-  const searchCustomer = (event) => {
-    event.preventDefault();
+  const searchCustomer = (ev) => {
+    ev.preventDefault();
     if (pan) {
       dispatch(getCustomerByPan(pan));
     }
     setSubmitted(true);
-    console.log(customer);
   };
 
   const handlePanChange = (el) => {
     setPan(el.target.value);
     setSubmitted(false);
+    if (window.location != "/manager" || "/manager/") {
+      navigate("/manager");
+    }
   };
   return (
     <>
@@ -53,24 +55,28 @@ export default function ManagerPage() {
           <input className="submit" type="submit" value="Check for Account" />
           {submitted &&
             (!customerExists ? (
-              <p>That customer does not yet exist</p>
+              <>
+                <h2 className="info">That customer does not yet exist</h2>
+                <input
+                  className="option"
+                  type="button"
+                  value="Create New Customer"
+                  onClick={() => navigate("/manager/newcustomer")}
+                />
+              </>
             ) : (
-              <p>A customer with that PAN exists</p>
+              <>
+                <h2 className="info">A customer with that PAN exists</h2>
+                <input
+                  className="option"
+                  type="button"
+                  value="Add Account"
+                  onClick={() => navigate("/manager/newAccount")}
+                />
+              </>
             ))}
         </form>
-        <div className="card flexColumn">
-          <input
-            type="button"
-            value="Create New Customer"
-            onClick={() => navigate("/manager/newcustomer")}
-          />
-          <input
-            type="button"
-            value="Add Account"
-            onClick={() => navigate("/manager/newAccount")}
-          />
-        </div>
-        <Outlet />
+        <Outlet context={[pan, setPan]} />
       </section>
     </>
   );

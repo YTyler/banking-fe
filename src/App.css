@@ -2,12 +2,12 @@
   font-size: 100%;
   margin: 0;
   padding: 0;
-  text-align: center;
 }
 
 h1 {
   font-size: 5rem;
   margin-bottom: 0.5em;
+  text-align: center;
 }
 
 body {
@@ -18,8 +18,6 @@ body {
   padding: 2em;
   background-color: rgba(179, 177, 171, 0.5);
   border-radius: 20px;
-}
-.card + .card {
   margin-top: 1em;
 }
 
@@ -30,12 +28,7 @@ body {
 }
 
 .centered label {
-  text-align: left;
   margin-bottom: 0.25em;
-}
-
-.centered input {
-  margin-bottom: 0.5em;
 }
 
 .centered input:focus {
@@ -50,6 +43,16 @@ body {
 
 .submit {
   width: fit-content;
-  margin: auto;
+  margin: 0.5em auto;
   padding: 0.25em;
+}
+
+.info {
+  font-size: 1.5rem;
+  text-align: center;
+}
+
+.option {
+  text-align: center;
+  margin-top: 0.5em;
 }
