@@ -6,6 +6,7 @@ import ManagerPage from "./screens/ManagerPage";
 import TestPage from "./screens/TestPage";
 import NewCustomer from "./components/NewCustomer";
 import NewUser from "./components/NewUser";
+import CreateSuccess from "./components/CreateSuccess";
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
             <Route path="manager" element={<ManagerPage />}>
               <Route path="newuser" element={<NewUser />} />
               <Route path="newcustomer" element={<NewCustomer />} />
+              <Route path="success/:item" element={<CreateSuccess />} />
             </Route>
             <Route path="test" element={<TestPage />} />
           </Route>
