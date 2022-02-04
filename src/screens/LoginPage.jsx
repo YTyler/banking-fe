@@ -35,25 +35,28 @@ export default function LoginPage() {
   };
 
   return (
-    <div className="centered">
-      <form className="card flexColumn" onSubmit={(e) => loginHandler(e)}>
-        <label>Username:</label>
-        <input
-          type="text"
-          value={username}
-          onChange={(el) => {
-            setUsername(el.target.value);
-          }}
-        />
-        <label>Password:</label>
-        <input
-          type="password"
-          value={password}
-          onChange={(el) => setPassword(el.target.value)}
-        />
-        <input className="submit" type="submit"></input>
-        {!loginIsValid && <p>Login Credentials are Invalid</p>}
-      </form>
-    </div>
+    <>
+      <h1>Welcome to the Bank</h1>
+      <section className="centered">
+        <form className="card flexColumn" onSubmit={(e) => loginHandler(e)}>
+          <label>Username:</label>
+          <input
+            type="text"
+            value={username}
+            onChange={(el) => {
+              setUsername(el.target.value);
+            }}
+          />
+          <label>Password:</label>
+          <input
+            type="password"
+            value={password}
+            onChange={(el) => setPassword(el.target.value)}
+          />
+          <input className="submit" type="submit"></input>
+          {!loginIsValid && <p>Login Credentials are Invalid</p>}
+        </form>
+      </section>
+    </>
   );
 }
