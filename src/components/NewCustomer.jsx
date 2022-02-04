@@ -1,13 +1,20 @@
 import React, { useState } from "react";
-import { useOutletContext } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { useSelector } from "react-redux";
+import { useNavigate, useOutletContext } from "react-router-dom";
+import { createCustomer } from "../store/actions/customerActions";
+
 export default function NewCustomer() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+
+  const createdUser = useSelector((state) => state.userState.createdUser);
   const [pan] = useOutletContext();
   const [newCustomer, setnewCustomer] = useState({
     name: "",
     address: "",
     email: "",
     pan: pan,
-    username: "",
   });
   const changeHandler = (el) => {
     setnewCustomer((prev) => {
@@ -19,8 +26,11 @@ export default function NewCustomer() {
   };
   const submitHandler = async (ev) => {
     ev.preventDefault();
+    dispatch(createCustomer(newCustomer, createdUser));
+    navigate("/manager/success/customer");
   };
 
+  console.log(createdUser);
   return (
     <section>
       <form className="card flexColumn" onSubmit={(ev) => submitHandler(ev)}>

@@ -6,6 +6,8 @@ export const USERS_ERROR = "USERS_ERROR";
 
 //Customer Actions
 export const GET_CUSTOMER = "GET_CUSTOMER";
+export const CREATE_CUSTOMER = "CREATE_CUSTOMER";
+export const CUSTOMER_ERROR = "CUSTOMER_ERROR";
 
 //Account Actions
 export const GET_ACCOUNT = "GET_ACCOUNT";
