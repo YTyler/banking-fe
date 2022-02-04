@@ -2,7 +2,6 @@ import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import Navbar from "../components/Navbar";
 import { loginUser } from "../store/actions/userActions";
 
 export default function LoginPage() {
@@ -14,6 +13,7 @@ export default function LoginPage() {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  //navigate to correct page based on user role
   useEffect(() => {
     if (user.role === "account_holder") {
       navigate("/customer");

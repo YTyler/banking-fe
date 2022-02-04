@@ -5,6 +5,8 @@ import LoginPage from "./screens/LoginPage";
 import ManagerPage from "./screens/ManagerPage";
 import TestPage from "./screens/TestPage";
 import NewCustomer from "./components/NewCustomer";
+import NewUser from "./components/NewUser";
+
 function App() {
   return (
     <div className="App">
@@ -13,6 +15,7 @@ function App() {
           <Route path="/">
             <Route index element={<LoginPage />} />
             <Route path="manager" element={<ManagerPage />}>
+              <Route path="newuser" element={<NewUser />} />
               <Route path="newcustomer" element={<NewCustomer />} />
             </Route>
             <Route path="test" element={<TestPage />} />

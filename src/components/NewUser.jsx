@@ -1,33 +1,28 @@
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { createAccountHolder } from "../store/actions/userActions";
 
 export default function NewUser() {
+  const dispatch = useDispatch();
+  const navigate = useNavigate();
+  const [username, setUsername] = useState("");
+
+  const submitHandler = (ev) => {
+    ev.preventDefault();
+    dispatch(createAccountHolder({ username: username }));
+    navigate("/manager/newcustomer");
+  };
   return (
     <section>
       <form className="card flexColumn" onSubmit={(ev) => submitHandler(ev)}>
-        <label>Full Name:</label>
+        <label>Username:</label>
         <input
-          name="name"
+          name="username"
           type="text"
           required
-          value={newCustomer.name}
-          onChange={(ev) => changeHandler(ev.target)}
-        />
-        <label>Address:</label>
-        <input
-          name="address"
-          type="text"
-          required
-          value={newCustomer.address}
-          onChange={(ev) => changeHandler(ev.target)}
-        />
-        <label>Email:</label>
-        <input
-          name="email"
-          type="text"
-          required
-          pattern=".+@.+\.com"
-          value={newCustomer.email}
-          onChange={(ev) => changeHandler(ev.target)}
+          value={username}
+          onChange={(ev) => setUsername(ev.target.value)}
         />
         <input className="submit" type="submit"></input>
       </form>

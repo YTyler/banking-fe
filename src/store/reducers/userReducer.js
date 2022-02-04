@@ -1,8 +1,9 @@
-import { GET_USERS, LOGIN_USER } from "../types";
+import { GET_USERS, LOGIN_USER, CREATE_HOLDER } from "../types";
 
 const initialState = {
   users: [],
   currentUser: {},
+  createdUser: {},
   loading: true,
 };
 
@@ -20,7 +21,12 @@ function userReducer(state = initialState, action) {
         currentUser: action.payload,
         loading: false,
       };
-
+    case CREATE_HOLDER:
+      return {
+        ...state,
+        createdUser: action.payload,
+        loading: false,
+      };
     default:
       return state;
   }

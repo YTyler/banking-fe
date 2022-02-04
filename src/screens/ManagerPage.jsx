@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { useDispatch } from "react-redux";
 import { useSelector } from "react-redux";
-import { Outlet, useNavigate, useLo } from "react-router-dom";
+import { Outlet, useNavigate } from "react-router-dom";
 import { getCustomerByPan } from "../store/actions/customerActions";
 
 export default function ManagerPage() {
@@ -61,7 +61,7 @@ export default function ManagerPage() {
                   className="option"
                   type="button"
                   value="Create New Customer"
-                  onClick={() => navigate("/manager/newcustomer")}
+                  onClick={() => navigate("/manager/newuser")}
                 />
               </>
             ) : (
@@ -71,7 +71,7 @@ export default function ManagerPage() {
                   className="option"
                   type="button"
                   value="Add Account"
-                  onClick={() => navigate("/manager/newAccount")}
+                  onClick={() => navigate("/manager/addaccount")}
                 />
               </>
             ))}

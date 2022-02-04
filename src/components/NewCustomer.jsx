@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { useOutletContext } from "react-router-dom";
-
 export default function NewCustomer() {
   const [pan] = useOutletContext();
   const [newCustomer, setnewCustomer] = useState({
@@ -18,9 +17,10 @@ export default function NewCustomer() {
       };
     });
   };
-  const submitHandler = (ev) => {
+  const submitHandler = async (ev) => {
     ev.preventDefault();
   };
+
   return (
     <section>
       <form className="card flexColumn" onSubmit={(ev) => submitHandler(ev)}>
@@ -47,14 +47,6 @@ export default function NewCustomer() {
           required
           pattern=".+@.+\.com"
           value={newCustomer.email}
-          onChange={(ev) => changeHandler(ev.target)}
-        />
-        <label>Username:</label>
-        <input
-          name="username"
-          type="text"
-          required
-          value={newCustomer.username}
           onChange={(ev) => changeHandler(ev.target)}
         />
         <input className="submit" type="submit"></input>

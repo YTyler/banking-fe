@@ -41,5 +41,10 @@ export const createAccountHolder = (user) => async (dispatch) => {
       type: CREATE_HOLDER,
       payload: res.data,
     });
-  } catch (e) {}
+  } catch (e) {
+    dispatch({
+      type: USERS_ERROR,
+      payload: console.log(e),
+    });
+  }
 };
